@@ -1,6 +1,6 @@
-# Remove Azure PowerShell Modules
+# Uninstall Azure PowerShell Modules
 
-Remove Azure Rm and Az PowerShell modules.
+Uninstall Azure Rm and Az PowerShell modules.
 
 ## Description
 
