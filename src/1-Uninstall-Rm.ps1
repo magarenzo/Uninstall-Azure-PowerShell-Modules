@@ -1,9 +1,11 @@
 <#
 .SYNOPSIS
     Uninstall Azure Rm PowerShell modules.
+
 .EXAMPLE
     PS> .\1-Uninstall-Rm.ps1
 #>
+
 Function WriteLog {
     Param (
         [string] $Message,
