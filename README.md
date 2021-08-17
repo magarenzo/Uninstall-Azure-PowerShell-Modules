@@ -16,7 +16,7 @@ I needed to clean up an environment so I followed Microsoft's documentation on [
 Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
 ```
 
-3. Run the `1-Uninstall-Rm.ps1` script. For example:
+3. Run the `1-Uninstall-Rm.ps1` script as follows:
 
 ```powershell
 PS> .\1-Uninstall-Rm.ps1
@@ -26,7 +26,7 @@ PS> .\1-Uninstall-Rm.ps1
 
 5. Repeat steps 1. and optionally 2.
 
-6. Run the `2-Uninstall-Az.ps1` script. For example:
+6. Run the `2-Uninstall-Az.ps1` script as follows:
 
 ```powershell
 PS> .\2-Uninstall-Az.ps1
