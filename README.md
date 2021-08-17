@@ -4,7 +4,7 @@ Uninstall Azure Rm and Az PowerShell modules.
 
 ## Description
 
-Found this nifty PowerShell cmdlet `Copy-VMFile` to copy a file to a virtual machine, so I put it inside this script with parameters and simple logging for ease of use.
+I needed to clean up an environment so I followed Microsoft's documentation on [How to uninstall Azure PowerShell modules](https://docs.microsoft.com/en-us/powershell/azure/uninstall-az-ps?view=azps-6.3.0) and put their recommendations into two separate scripts to uninstall Rm and then Az modules along with simple logging for ease of use.
 
 ## Running the Scripts
 
