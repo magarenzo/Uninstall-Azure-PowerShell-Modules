@@ -28,30 +28,35 @@ Function WriteLog {
 WriteLog "STARTED: 2-Uninstall-Az.ps1."
 
 WriteLog "Getting Az modules."
-Get-InstalledModule -Name Az -AllVersions -OutVariable AzVersions
-if ($AzVersions) {
-    try {
-        ($AzVersions | ForEach-Object {
-            Import-Clixml -Path (Join-Path -Path $_.InstalledLocation -ChildPath PSGetModuleInfo.xml)
-        }).Dependencies.Name | Sort-Object -Descending -Unique -OutVariable AzModules
-    } catch {
-        WriteLog -Err "ERROR: Getting Az modules."
-    }
+Get-Module -Name Az* -OutVariable ModulesMemory
+Get-Module -ListAvailable -Name Az* -OutVariable ModulesInstalled
 
+if ($ModulesMemory) {
+    WriteLog "Removing Az modules."
+    try {
+        ($ModulesMemory | ForEach-Object {
+            WriteLog "Attempting to remove module: $_"
+            Remove-Module -Name $_
+        })
+        Remove-Module -Name Az
+    } catch {
+        WriteLog -Err "ERROR: Removing Az modules."
+    }
+} else {
+    WriteLog "No Az modules to remove."
+}
+
+if ($ModulesInstalled) {
     WriteLog "Uninstalling Az modules."
     try {
-        $AzModules | ForEach-Object {
-            Remove-Module -Name $_ -ErrorAction SilentlyContinue
+        ($ModulesInstalled | ForEach-Object {
             WriteLog "Attempting to uninstall module: $_"
             Uninstall-Module -Name $_ -AllVersions
-          }
-          Remove-Module -Name Az -ErrorAction SilentlyContinue
-          Uninstall-Module -Name Az -AllVersions
+        })
+        Uninstall-Module -Name Az -AllVersions
     } catch {
         WriteLog -Err "ERROR: Uninstalling Az modules."
     }
-} else {
-    WriteLog "No Az modules to uninstall."
 }
 
 WriteLog "COMPLETED: 2-Uninstall-Az.ps1."
