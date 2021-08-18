@@ -12,15 +12,15 @@ I needed to clean up an environment so I followed Microsoft's documentation on [
 
 2. Optionally run the following to allow the current session to run scripts not digitally signed:
 
-```powershell
-Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
-```
+    ```powershell
+    Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    ```
 
 3. Run the `1-Uninstall-Rm.ps1` script as follows:
 
-```powershell
-PS> .\1-Uninstall-Rm.ps1
-```
+    ```powershell
+    PS> .\1-Uninstall-Rm.ps1
+    ```
 
 4. Close the PowerShell session.
 
@@ -28,9 +28,9 @@ PS> .\1-Uninstall-Rm.ps1
 
 6. Run the `2-Uninstall-Az.ps1` script as follows:
 
-```powershell
-PS> .\2-Uninstall-Az.ps1
-```
+    ```powershell
+    PS> .\2-Uninstall-Az.ps1
+    ```
 
 ## Owner
 
