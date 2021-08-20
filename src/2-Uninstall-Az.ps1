@@ -57,6 +57,8 @@ if ($ModulesInstalled) {
     } catch {
         WriteLog -Err "ERROR: Uninstalling Az modules."
     }
+} else {
+    WriteLog "No Az modules to uninstall."
 }
 
 WriteLog "COMPLETED: 2-Uninstall-Az.ps1."
