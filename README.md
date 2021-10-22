@@ -34,4 +34,4 @@ I needed to clean up an environment so I followed Microsoft's documentation on [
 
 ## Owner
 
-[Michael A.](https://linkedin.com/in/magarenzo)
+[Michael Agarenzo](https://linkedin.com/in/magarenzo)
